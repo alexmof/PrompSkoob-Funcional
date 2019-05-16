@@ -12,6 +12,21 @@ validaOpcao :: Int -> Bool -> String
 validaOpcao opcao estaLogado 
     | estaLogado == True && opcao < 1 || opcao > 8 = "Opcao invalida!\n"
     | estaLogado == False && opcao < 1 || opcao > 4 = "Opcao invalida!\n"
+    | otherwise = ""
+
+acaoMenu :: Int -> Bool ->
+acaoMenu 1 False = cadastro
+acaoMenu 2 False = autenticacao
+acaoMenu 3 False = pesquisarNoAcervo
+acaoMenu 4 False = sair
+acaoMenu 1 True = editarPerfil
+acaoMenu 2 True = gerenciaLivro
+acaoMenu 3 True = minhaEstante
+acaoMenu 4 True = pesquisarNoAcervo
+acaoMenu 5 True = recomendaLivros
+acaoMenu 6 True = removePerfil
+acaoMenu 7 True = sairConta
+acaoMenu 8 True = sair
 
 main = do
     let estaLogado = False
@@ -19,3 +34,4 @@ main = do
     putStrLn (exibeMenu estaLogado nome)
     opcao <- readLn :: IO Int
     putStrLn (validaOpcao opcao estaLogado)
+    acaoMenu opcao estaLogado
