@@ -34,7 +34,7 @@ acaoMenu 8 True = sair
 cadastro :: IO()
 cadastro = putStrLn "cadastrando"
 
-autenticaoUsuario :: String -> String -> Bool
+autenticaoUsuario :: String -> String -> Bool -- ESTA FUNCAO SERA REIMPLEMENTADO NA PARTE DE USUARIO
 autenticaoUsuario nome senha = True
 
 autenticacao :: IO()
